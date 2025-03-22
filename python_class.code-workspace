@@ -19,7 +19,7 @@
         },
         "terminal.integrated.defaultProfile.windows": "PowerShell",
         "files.exclude": {
-            "**/venv": true
+            "**/venv": false
         }
     }
 }
