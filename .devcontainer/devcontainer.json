@@ -29,27 +29,27 @@
                 "formulahendry.code-runner"
             ],
             "settings": {
-                "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python", // Correct for Linux container
+                "python.defaultInterpreterPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",  // Correct for Windows container
                 "python.terminal.activateEnvironment": true,
-                "terminal.integrated.profiles.linux": {  // PowerShell Core for Linux containers (pwsh)
+                "terminal.integrated.profiles.windows": {  // PowerShell Core for Windows containers (pwsh)
                     "PowerShell": {
-                        "path": "/usr/bin/pwsh",  // Path to PowerShell Core in the container
+                        "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",  // Path to PowerShell Core in Windows
                         "args": [
                             "-NoExit",
                             "-Command",
-                            "& { ${workspaceFolder}/venv/bin/Activate.ps1; Import-Module PSReadLine; Clear-Host }"  // Activate virtual environment in PowerShell Core
+                            "& { . ${workspaceFolder}\\venv\\Scripts\\Activate.ps1; Import-Module PSReadLine; Clear-Host }"  // Activate virtual environment in PowerShell
                         ]
                     }
                 },
-                "terminal.integrated.defaultProfile.linux": "PowerShell",  // Set PowerShell Core as the default terminal
+                "terminal.integrated.defaultProfile.windows": "PowerShell",  // Set PowerShell Core as the default terminal
                 "files.exclude": {
                     "**/.devcontainer": true,  // Hide the .devcontainer folder
                     "**/*.code-workspace": true,  // Hide all *.code-workspace files
                     "**/read.md": true,
-                    "**/requirements.txt":true,
-                    "**/.history":true,
-                    "**/venv":true,
-                    "**/.gitignore":true
+                    "**/requirements.txt": true,
+                    "**/.history": true,
+                    "**/venv": true,
+                    "**/.gitignore": true
                 }
             }
         }
